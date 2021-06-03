@@ -1,5 +1,7 @@
 package com.test.controller;
 
+import com.test.pattern.chain.LeaveApprovalTest;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,5 +19,9 @@ public class TestController {
             list.add("测试数据 "+i);
         }
          return list;
+    }
+    @RequestMapping("message/{day}")
+    public String getMessage(@PathVariable Integer day){
+        return LeaveApprovalTest.getMessage(day);
     }
 }
