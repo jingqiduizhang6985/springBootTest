@@ -1,5 +1,6 @@
 package com.test.controller;
 
+import com.test.pattern.Proxy.ProxyTest;
 import com.test.pattern.chain.LeaveApprovalTest;
 import com.test.pattern.see.RMBrateTest;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,5 +43,10 @@ public class TestController {
     @RequestMapping("see/{number}")
     public List<String> getSeeList(@PathVariable Integer number) {
         return RMBrateTest.getSeeList(number);
+    }
+
+    @RequestMapping("getProxy")
+    public String getProxy() {
+        return ProxyTest.getProxyMessage();
     }
 }
